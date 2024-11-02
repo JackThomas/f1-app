@@ -1,14 +1,17 @@
+"use client";
+
 import { Header } from "@/components/core/header";
 import { HeaderNavigation } from "@/components/core/header/header-navigation";
 import { Logo } from "@/components/core/logo";
 import { Viewport } from "@/components/core/viewport";
-import { Stack } from "@chakra-ui/react";
-import { ReactNode } from "react";
-import Transition from "./components/transition";
+import { Box, Stack } from "@chakra-ui/react";
+import { ReactNode, useRef } from "react";
 
 export default function Template({
     children,
 }: Readonly<{ children: ReactNode }>) {
+    const wrapperRef = useRef(null);
+
     return (
         <Stack gap={0} height="90vh">
             <Header>
@@ -34,7 +37,9 @@ export default function Template({
                 />
             </Header>
             <Viewport>
-                <Transition>{children}</Transition>
+                <Box background="#15151D" pt="25px" pb="25px" ref={wrapperRef}>
+                    {children}
+                </Box>
             </Viewport>
         </Stack>
     );

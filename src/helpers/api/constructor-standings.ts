@@ -14,7 +14,7 @@ export const mapConstructorStandings = (data: ConstructorStandingApiData) =>
         data?.MRData?.StandingsTable.StandingsLists[0].ConstructorStandings ??
         []
     ).map(({ Constructor, positionText, points }, index) => {
-        const isFirst = index === 0;
+        const isPrimary = index === 0;
 
         return {
             id: Constructor.constructorId,
@@ -22,6 +22,6 @@ export const mapConstructorStandings = (data: ConstructorStandingApiData) =>
             name: Constructor.name,
             color: getConstructorColour(Constructor),
             points,
-            isFirst,
+            isPrimary,
         };
     }) ?? [];

@@ -1,5 +1,6 @@
-import { Stack } from "@chakra-ui/react";
-import { TransitionLink } from "../transition-link";
+"use client";
+
+import { Box, Button, Stack } from "@chakra-ui/react";
 
 interface HeaderNavigationProps {
     links: {
@@ -9,24 +10,31 @@ interface HeaderNavigationProps {
     }[];
 }
 
-const HeaderNavigation = ({ links }: HeaderNavigationProps) => (
-    <Stack
-        direction="row"
-        width="100%"
-        bg="#e10600"
-        gap={4}
-        display="flex"
-        justifyContent="space-between"
-        background="#e10600"
-        align="center"
-        padding={4}
-    >
-        {links.map(({ id, label, href }) => (
-            <TransitionLink key={id} href={href}>
-                {label}
-            </TransitionLink>
-        ))}
-    </Stack>
-);
+const HeaderNavigation = ({ links }: HeaderNavigationProps) => {
+    const handleClick = (href: string) => {
+        window.history.pushState(null, "", href);
+    };
+
+    return (
+        <Stack
+            direction="row"
+            width="100%"
+            bg="#e10600"
+            gap={4}
+            display="flex"
+            justifyContent="space-between"
+            background="#e10600"
+            align="center"
+        >
+            {links.map(({ id, label, href }) => (
+                <Box key={id} flexGrow={1} flexBasis={`${100 / links.length}%`}>
+                    <Button width="100%" onClick={() => handleClick(href)}>
+                        {label}
+                    </Button>
+                </Box>
+            ))}
+        </Stack>
+    );
+};
 
 export { HeaderNavigation };

@@ -6,7 +6,7 @@ interface HeaderProps {
 }
 
 const Header = ({ children }: HeaderProps) => (
-    <Stack background="#e10600" align="center" padding={4}>
+    <Stack background="#e10600" align="center" padding={4} gap={4}>
         {children}
     </Stack>
 );

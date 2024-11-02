@@ -24,14 +24,14 @@ export const mapDriverStandings = (data: DriverStandingsApiData) =>
                 familyName,
                 isWesternName,
             });
-            const isFirst = index === 0;
+            const isPrimary = index === 0;
             const constructor = getDriversCurrentConstructor(Constructors);
 
             return {
                 id: driverId,
                 position: positionText,
                 imagePath,
-                isFirst,
+                isPrimary,
                 givenName,
                 familyName,
                 isWesternName,

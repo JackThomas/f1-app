@@ -10,6 +10,7 @@ import {
 
 const Footer = () => {
     const standingsPage = "drivers";
+
     const navigation = [
         { href: "/", icon: <Article />, label: "Latest" },
         { href: "/video", icon: <PlayCircle />, label: "Video" },
