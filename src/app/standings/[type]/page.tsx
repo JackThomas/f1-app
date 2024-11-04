@@ -3,7 +3,7 @@
 import { Box } from "@chakra-ui/react";
 
 import { usePathname } from "next/navigation";
-import Test from "./transition-group";
+import Test from "../transition-group";
 // import Test from "./transition-group-2";
 
 // const Dummy = ({ ...props }: BoxProps) => (
@@ -13,5 +13,9 @@ import Test from "./transition-group";
 export default function Page() {
     const pathname = usePathname();
 
-    return <Test nextPathname={pathname} />;
+    return (
+        <>
+            <Test nextPathname={pathname} />
+        </>
+    );
 }

@@ -1,8 +1,7 @@
 import "@/styles/globals.scss";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Titillium_Web } from "next/font/google";
 
+import { fontClassName } from "@/assets/fonts";
 import { ReactNode } from "react";
 import { Provider } from "./provider";
 
@@ -15,38 +14,10 @@ interface RootLayoutProps {
     children: ReactNode;
 }
 
-// Font files can be colocated inside of `app`
-const font = localFont({
-    src: [
-        {
-            path: "../fonts/app/Formula1-Display-Regular.woff2",
-            weight: "400",
-            style: "normal",
-        },
-        {
-            path: "../fonts/app/Formula1-Display-Wide.woff2",
-            weight: "550",
-            style: "normal",
-        },
-        {
-            path: "../fonts/app/Formula1-Display-Bold.woff2",
-            weight: "700",
-            style: "normal",
-        },
-    ],
-    display: "swap",
-});
-
-const fontBody = Titillium_Web({
-    subsets: ["latin"],
-    display: "swap",
-    weight: "400",
-});
-
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={fontBody.className}>
+            <body className={fontClassName}>
                 <Provider>{children}</Provider>
             </body>
         </html>

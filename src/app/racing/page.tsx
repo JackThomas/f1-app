@@ -1,5 +1,4 @@
 import { Header } from "@/components/core/header";
-import { Logo } from "@/components/core/logo";
 import { Tabs } from "@/components/core/tabs";
 import { Viewport } from "@/components/core/viewport";
 import { Past, Upcoming } from "./components";
@@ -7,9 +6,7 @@ import { Past, Upcoming } from "./components";
 export default function Page() {
     return (
         <>
-            <Header>
-                <Logo fill="#ffffff" width="108px" height="27px" />
-            </Header>
+            <Header title="Racing" />
             <Viewport>
                 <Tabs
                     tabs={[

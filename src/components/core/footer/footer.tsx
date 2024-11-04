@@ -9,14 +9,12 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 
 const Footer = () => {
-    const standingsPage = "drivers";
-
     const navigation = [
         { href: "/", icon: <Article />, label: "Latest" },
         { href: "/video", icon: <PlayCircle />, label: "Video" },
         { href: "/racing", icon: <FlagCheckered />, label: "Racing" },
         {
-            href: `/standings/${standingsPage}`,
+            href: `/standings`,
             icon: <BaseballHelmet />,
             label: "Standings",
         },
@@ -30,6 +28,7 @@ const Footer = () => {
             justify="space-evenly"
             padding={4}
             borderTop="1px solid #e1e1e1"
+            height="80px"
         >
             {navigation.map((item) => (
                 <FooterLink key={item.href} {...item} />

@@ -16,12 +16,16 @@ const FooterLinkDefaultProps = {};
 const FooterLink = ({ href, icon, label }: FooterLinkProps) => {
     const pathname = usePathname();
 
-    const isActive = useMemo(() => pathname === href, [pathname, href]);
+    const isActive = useMemo(() => {
+        const segment = `/${pathname.split("/")[1]}`;
+        return segment === href;
+    }, [pathname, href]);
 
     return (
         <Link href={href}>
             <Stack align="center">
                 <Box
+                    fontSize="20px"
                     {...(isActive && {
                         color: "#e10600",
                     })}
@@ -29,6 +33,7 @@ const FooterLink = ({ href, icon, label }: FooterLinkProps) => {
                     {icon}
                 </Box>
                 <Text
+                    fontSize="xs"
                     {...(isActive && {
                         color: "#e10600",
                     })}

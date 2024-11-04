@@ -1,7 +1,6 @@
 const fonts = {
-    heading: { value: "'inter', sans-serif" },
-    body: { value: "'inter', sans-serif" },
-    mono: { value: "'inter', sans-serif" },
+    heading: { value: "F1Font, sans-serif" },
+    body: { value: "Titillium Web, sans-serif" },
 };
 
 export { fonts };

@@ -1,6 +1,7 @@
 "use client";
 
 import { Box, Button, Stack } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 
 interface HeaderNavigationProps {
     links: {
@@ -11,8 +12,11 @@ interface HeaderNavigationProps {
 }
 
 const HeaderNavigation = ({ links }: HeaderNavigationProps) => {
+    const router = useRouter();
+
     const handleClick = (href: string) => {
-        window.history.pushState(null, "", href);
+        // router.push(href);
+        history.pushState({}, "", href);
     };
 
     return (
