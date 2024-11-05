@@ -16,7 +16,7 @@ const Tabs = ({ tabs }: TabsProps) => {
         <ChakraTabs.Root defaultValue={tabs[0].id} variant="plain">
             <ChakraTabs.List
                 width="100%"
-                bg="#e10600"
+                bg="f1.red"
                 gap={4}
                 display="flex"
                 justifyContent="space-between"
@@ -28,7 +28,7 @@ const Tabs = ({ tabs }: TabsProps) => {
                         justifyContent="center"
                         flexGrow={1}
                         p={4}
-                        color="#ffffff"
+                        color="white"
                         value={id}
                     >
                         {label}
@@ -41,7 +41,7 @@ const Tabs = ({ tabs }: TabsProps) => {
                     background="transparent"
                     boxShadow="none"
                 >
-                    <Box width="100%" height="3px" background="#ffffff" />
+                    <Box width="100%" height="3px" background="white" />
                 </ChakraTabs.Indicator>
             </ChakraTabs.List>
             {tabs &&

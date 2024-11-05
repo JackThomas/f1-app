@@ -1,13 +1,19 @@
-import { Header } from "@/components/core/header";
-import { Viewport } from "@/components/core/viewport";
+"use client";
+
+import { Button, Stack } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
+    const router = useRouter();
+
+    const handleClick = () => {
+        router.push("/standings/drivers");
+    };
     return (
-        <>
-            <Header logo />
-            <Viewport>
-                <p>Fantasy</p>
-            </Viewport>
-        </>
+        <Stack p={8}>
+            <Button visual="primary" onClick={handleClick}>
+                Go to Standings
+            </Button>
+        </Stack>
     );
 }

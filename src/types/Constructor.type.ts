@@ -1,5 +1,7 @@
+import { type ConstructorId } from "./ConstructureId.type";
+
 export type Constructor = {
-    constructorId: string;
+    constructorId: ConstructorId;
     url: string;
     name: string;
     nationality: string;

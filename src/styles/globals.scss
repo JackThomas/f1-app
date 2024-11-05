@@ -4,13 +4,6 @@
   --foreground: #171717;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
 html,
 body {
   overflow-x: hidden;
@@ -23,45 +16,4 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */
-
-
-
-.card {
-  font-size: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 520px;
-  color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.home {
-  background: rgba(255, 100, 0, 0.8);
-}
-
-.about {
-  background: rgba(0, 150, 255, 0.8);
-}
-
-.contact {
-  background: rgba(100, 0, 255, 0.8);
 }

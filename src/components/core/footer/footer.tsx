@@ -23,7 +23,7 @@ const Footer = () => {
     return (
         <Stack
             direction="row"
-            background="#ffffff"
+            background="white"
             align="center"
             justify="space-evenly"
             padding={4}

@@ -5,7 +5,7 @@ interface LogoProps extends BoxProps {
 }
 
 const LogoDefaultProps = {
-    fill: "#EE0000",
+    fill: "f1.red",
 };
 
 const Logo = ({ fill, ...rest }: LogoProps) => (

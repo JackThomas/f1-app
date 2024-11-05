@@ -27,7 +27,7 @@ const FooterLink = ({ href, icon, label }: FooterLinkProps) => {
                 <Box
                     fontSize="20px"
                     {...(isActive && {
-                        color: "#e10600",
+                        color: "f1.red",
                     })}
                 >
                     {icon}
@@ -35,7 +35,7 @@ const FooterLink = ({ href, icon, label }: FooterLinkProps) => {
                 <Text
                     fontSize="xs"
                     {...(isActive && {
-                        color: "#e10600",
+                        color: "f1.red",
                     })}
                 >
                     {label}

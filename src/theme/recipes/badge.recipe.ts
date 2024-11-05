@@ -6,10 +6,11 @@ export const BadgeRecipe = defineRecipe({
         visual: {
             points: {
                 bg: "#F0F0F0",
-                color: "#15151E",
+                color: "f1.darkgrey",
                 borderRadius: "100px",
-                width: "80px",
-                height: "32px",
+                width: "70px",
+                height: "28px",
+                fontSize: "xs",
                 textAlign: "center",
                 display: "inline-flex",
                 alignItems: "center",

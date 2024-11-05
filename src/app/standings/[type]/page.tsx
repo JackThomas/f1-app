@@ -1,21 +1,16 @@
 "use client";
 
-import { Box } from "@chakra-ui/react";
-
 import { usePathname } from "next/navigation";
 import Test from "../transition-group";
-// import Test from "./transition-group-2";
 
-// const Dummy = ({ ...props }: BoxProps) => (
-//     <Box width={"100%"} height={"400px"} {...props} />
-// );
+const getCurrentPath = (pathname: string) => {
+    const path = pathname.split("/").filter(Boolean);
+    return path[path.length - 1];
+};
 
 export default function Page() {
     const pathname = usePathname();
+    const view = getCurrentPath(pathname);
 
-    return (
-        <>
-            <Test nextPathname={pathname} />
-        </>
-    );
+    return <Test view={view} />;
 }

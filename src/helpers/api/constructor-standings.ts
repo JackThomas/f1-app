@@ -1,5 +1,5 @@
 import { type ConstructorStandingApiData } from "@/types/ConstructorStandings.type";
-import { getConstructorColour } from "../data";
+import { getConstructorColour, getConstructorImagePath } from "../data";
 import { API_URL } from "./constants";
 
 export const fetchConstructorStandings = async () => {
@@ -9,19 +9,26 @@ export const fetchConstructorStandings = async () => {
     return await response.json();
 };
 
-export const mapConstructorStandings = (data: ConstructorStandingApiData) =>
-    (
-        data?.MRData?.StandingsTable.StandingsLists[0].ConstructorStandings ??
-        []
-    ).map(({ Constructor, positionText, points }, index) => {
-        const isPrimary = index === 0;
-
-        return {
-            id: Constructor.constructorId,
-            position: positionText,
-            name: Constructor.name,
-            color: getConstructorColour(Constructor),
-            points,
-            isPrimary,
-        };
-    }) ?? [];
+export const mapConstructorStandings = (data: ConstructorStandingApiData) => {
+    return (
+        (
+            data?.MRData?.StandingsTable.StandingsLists[0]
+                .ConstructorStandings ?? []
+        ).map(({ Constructor, positionText, points }, index) => {
+            const { constructorId } = Constructor;
+            const isPrimary = index === 0;
+            const imagePath = getConstructorImagePath({
+                constructorId,
+            });
+            return {
+                id: constructorId,
+                position: positionText,
+                imagePath,
+                name: Constructor.name,
+                color: getConstructorColour(Constructor),
+                points,
+                isPrimary,
+            };
+        }) ?? []
+    );
+};

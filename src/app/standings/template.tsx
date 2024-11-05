@@ -34,7 +34,7 @@ export default function Template({
             </Header>
 
             <Viewport>
-                <Box flexGrow={1} background="#15151D" pt="25px" pb="25px">
+                <Box flexGrow={1} background="f1.darkgrey" pt="25px" pb="25px">
                     {children}
                 </Box>
             </Viewport>

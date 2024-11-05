@@ -10,7 +10,7 @@ interface HeaderProps {
 }
 
 const Header = ({ logo, title, children }: HeaderProps) => (
-    <Stack background="#e10600" align="center" justify="center" gap={0}>
+    <Stack background="f1.red" align="center" justify="center" gap={0}>
         <Stack align="center" justify="center" padding={4} height="80px">
             {logo && <Logo fill="white" width="108px" height="27px" />}
             {title && <HeaderTitle color="white">{title}</HeaderTitle>}

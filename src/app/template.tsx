@@ -6,7 +6,7 @@ export default function Template({
     children,
 }: Readonly<{ children: ReactNode }>) {
     return (
-        <Stack gap={0} height="100vh">
+        <Stack gap={0} maxH="-webkit-fill-available" height="100vh">
             {children}
             <Footer />
         </Stack>

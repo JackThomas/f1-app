@@ -14,6 +14,7 @@ import {
 
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { CSSTransitionProps } from "react-transition-group/CSSTransition";
+import { Constructors, Drivers, RaceResults } from "./components";
 
 interface RouteListElement extends ReactElement {
     ref: RefObject<HTMLElement>;
@@ -71,25 +72,21 @@ const getTransitionGroupCss = (
     }
 `;
 
-const Home = () => <div className="card home">Home</div>;
-const About = () => <div className="card about">About</div>;
-const Contact = () => <div className="card contact">Contact</div>;
-
 const panels = [
     {
         index: 0,
-        path: "/standings/drivers",
-        element: <Home />,
+        path: "drivers",
+        element: <Drivers />,
     },
     {
         index: 1,
-        path: "/standings/constructors",
-        element: <About />,
+        path: "constructors",
+        element: <Constructors />,
     },
     {
         index: 2,
-        path: "/standings/race-results",
-        element: <Contact />,
+        path: "race-results",
+        element: <RaceResults />,
     },
 ];
 
@@ -98,14 +95,14 @@ interface SlideRoutesProps {
     duration?: number;
     timing?: string;
     destroy?: boolean;
-    nextPathname: string;
+    view: string;
 }
 const SlideRoutes = (props: SlideRoutesProps) => {
     const {
         duration = 200,
         timing = "ease",
         destroy = true,
-        nextPathname,
+        view: nextPathname,
     } = props;
 
     // routes
