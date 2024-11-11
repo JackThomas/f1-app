@@ -1,7 +1,9 @@
 import { API_URL } from "./constants";
 
 export const fetchResults = async () => {
-    const endpoint = `${API_URL}/2024/results/?format=json`;
+    const year = "current";
+    const round = "last";
+    const endpoint = `${API_URL}/${year}/${round}/results/?format=json`;
     const response = await fetch(endpoint);
 
     return await response.json();
