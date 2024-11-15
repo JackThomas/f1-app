@@ -1,9 +1,18 @@
+"use client";
+
 import { Header } from "@/components/core/header";
 import { Viewport } from "@/components/core/viewport";
 import { Box, Button, Heading, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-export default async function Page() {
+export default function Page() {
+    const router = useRouter();
+
+    const handleClick = () => {
+        router.push("/standings/drivers");
+    };
+
     return (
         <>
             <Header logo />
@@ -46,7 +55,7 @@ export default async function Page() {
                                 </Link>
                             </Text>
                         </Box>
-                        <Button visual="primary" as={Link} href="/standings">
+                        <Button visual="primary" onClick={handleClick}>
                             Go to Standings
                         </Button>
                     </Stack>

@@ -1,6 +1,6 @@
 const colors = {
-    "f1.red": "#e10600",
-    "f1.darkgrey": "#15151D",
+    "f1.red": { value: "#e10600" },
+    "f1.darkgrey": { value: "#15151D" },
 };
 
 export { colors };

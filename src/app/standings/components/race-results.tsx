@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Stack } from "@chakra-ui/react";
+import { Stack, Button } from "@chakra-ui/react";
 
 const RaceResults = () => {
     const handleClick = () => {
