@@ -1,28 +1,9 @@
-// "use client";
-
 import { Header } from "@/components/core/header";
 import { Viewport } from "@/components/core/viewport";
-import {
-    fetchConstructorStandings,
-    mapConstructorStandings,
-} from "@/helpers/api/constructor-standings";
-import { Box, Button, Heading, Link, Stack, Text } from "@chakra-ui/react";
-// import { useRouter } from "next/navigation";
+import { Box, Button, Heading, Stack, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 export default async function Page() {
-    const data = await fetchConstructorStandings();
-    const constructorStandings = mapConstructorStandings(data);
-
-    console.log({ constructorStandings });
-
-    // const router = useRouter();
-
-    const handleClick = () => {
-        console.log("x");
-
-        // router.push("/standings/drivers");
-    };
-
     return (
         <>
             <Header logo />
@@ -65,9 +46,7 @@ export default async function Page() {
                                 </Link>
                             </Text>
                         </Box>
-                        <Button
-                            visual="primary" //onClick={handleClick}
-                        >
+                        <Button visual="primary" as={Link} href="/standings">
                             Go to Standings
                         </Button>
                     </Stack>

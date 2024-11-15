@@ -17,7 +17,9 @@ import { CSSTransitionProps } from "react-transition-group/CSSTransition";
 import { Constructors, Drivers, RaceResults } from "./components";
 
 interface RouteListElement extends ReactElement {
-    ref: RefObject<HTMLElement>;
+    props: {
+        ref: RefObject<HTMLElement>;
+    };
 }
 const getTransformStyles = (transformFn: string, max: string) => `
     // back
@@ -127,7 +129,8 @@ const SlideRoutes = (props: SlideRoutesProps) => {
         return routeElements[index].props?.element;
     };
 
-    const routeList = getComponent(nextPathname);
+    const routeList: RouteListElement = getComponent(nextPathname);
+    console.log({ routeList });
 
     // direction
     const nextPath = useMemo<number>(
@@ -172,7 +175,7 @@ const SlideRoutes = (props: SlideRoutesProps) => {
         >
             <CSSTransition
                 key={nextPath}
-                nodeRef={(routeList as RouteListElement).ref}
+                nodeRef={routeList.props.ref}
                 {...cssTransitionProps}
             >
                 {routeList}

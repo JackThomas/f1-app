@@ -1,7 +1,7 @@
 import { type ConstructorStandingApiData } from "@/types/ConstructorStandings.type";
 import { getConstructorColour, getConstructorImagePath } from "../data";
 import { API_URL } from "./constants";
-import { fetchDriversByConstructor } from "./drivers";
+// import { fetchDriversByConstructor } from "./drivers";
 
 export const fetchConstructorStandings = async () => {
     const endpoint = `${API_URL}/2024/constructorstandings/?format=json`;

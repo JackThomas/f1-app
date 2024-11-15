@@ -1,6 +1,5 @@
 import { Constructor } from "@/types/Constructor.type";
 import { normaliseString } from "../utils";
-import Countries from "world-countries";
 
 export const getDriverImagePath = ({
     givenName,
@@ -28,10 +27,4 @@ export const getDriverIsWesternName = ({
 
 export const getDriversCurrentConstructor = (constructors: Constructor[]) => {
     return constructors[constructors.length - 1];
-};
-
-export const getDriverCountryFlag = ({ nationality }) => {
-    console.log({ Countries });
-
-    // const country = CountryQuery.find('demonym', demonym);
 };

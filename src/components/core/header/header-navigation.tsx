@@ -5,7 +5,6 @@ import { Box, Button, Stack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { useTransitionRouter } from "next-view-transitions";
 
 interface HeaderNavigationProps {
     links: {
@@ -16,8 +15,6 @@ interface HeaderNavigationProps {
 }
 
 const HeaderNavigation = ({ links }: HeaderNavigationProps) => {
-    const router = useTransitionRouter();
-
     const pathname = usePathname();
     const [initialIndicatorProps, setInitialIndicatorProps] = useState({});
     const [indicatorProps, setIndicatorProps] = useState({});
@@ -35,6 +32,7 @@ const HeaderNavigation = ({ links }: HeaderNavigationProps) => {
 
     const setActiveElement = (href: string) => {
         const activeButton = buttonsRef.current[href];
+
         const { left, width } = getDimensions(activeButton);
 
         setIndicatorProps({
@@ -44,8 +42,7 @@ const HeaderNavigation = ({ links }: HeaderNavigationProps) => {
     };
 
     const setPath = (href: string) => {
-        // history.pushState({}, "", href);
-        router.push(href);
+        history.pushState({}, "", href);
     };
 
     useEffect(() => {
